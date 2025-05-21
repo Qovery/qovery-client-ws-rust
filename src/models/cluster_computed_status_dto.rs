@@ -21,17 +21,20 @@ pub struct ClusterComputedStatusDto {
     pub kube_version_status: Box<models::QoveryClusterKubeVersionStatus>,
     #[serde(rename = "node_warnings")]
     pub node_warnings: std::collections::HashMap<String, Vec<models::QoveryNodeFailure>>,
+    #[serde(rename = "qovery_components")]
+    pub qovery_components: Vec<models::QoveryComponentDto>,
     #[serde(rename = "qovery_components_in_failure")]
     pub qovery_components_in_failure: Vec<models::QoveryComponentInFailure>,
 }
 
 impl ClusterComputedStatusDto {
-    pub fn new(global_status: models::ClusterStatusGlobalStatus, is_max_nodes_size_reached: bool, kube_version_status: models::QoveryClusterKubeVersionStatus, node_warnings: std::collections::HashMap<String, Vec<models::QoveryNodeFailure>>, qovery_components_in_failure: Vec<models::QoveryComponentInFailure>) -> ClusterComputedStatusDto {
+    pub fn new(global_status: models::ClusterStatusGlobalStatus, is_max_nodes_size_reached: bool, kube_version_status: models::QoveryClusterKubeVersionStatus, node_warnings: std::collections::HashMap<String, Vec<models::QoveryNodeFailure>>, qovery_components: Vec<models::QoveryComponentDto>, qovery_components_in_failure: Vec<models::QoveryComponentInFailure>) -> ClusterComputedStatusDto {
         ClusterComputedStatusDto {
             global_status,
             is_max_nodes_size_reached,
             kube_version_status: Box::new(kube_version_status),
             node_warnings,
+            qovery_components,
             qovery_components_in_failure,
         }
     }
