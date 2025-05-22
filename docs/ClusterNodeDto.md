@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **pods** | [**Vec<models::NodePodInfoDto>**](NodePodInfoDto.md) |  | 
 **resources_allocatable** | [**models::NodeResourceDto**](NodeResourceDto.md) |  | 
 **resources_allocated** | [**models::NodeResourceAllocatedDto**](NodeResourceAllocatedDto.md) |  | 
+**resources_capacity** | [**models::NodeResourceDto**](NodeResourceDto.md) |  | 
 **taints** | [**Vec<models::NodeTaintDto>**](NodeTaintDto.md) |  | 
 **unschedulable** | **bool** |  | 
 

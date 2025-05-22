@@ -45,6 +45,8 @@ pub struct ClusterNodeDto {
     pub resources_allocatable: Box<models::NodeResourceDto>,
     #[serde(rename = "resources_allocated")]
     pub resources_allocated: Box<models::NodeResourceAllocatedDto>,
+    #[serde(rename = "resources_capacity")]
+    pub resources_capacity: Box<models::NodeResourceDto>,
     #[serde(rename = "taints")]
     pub taints: Vec<models::NodeTaintDto>,
     #[serde(rename = "unschedulable")]
@@ -52,7 +54,7 @@ pub struct ClusterNodeDto {
 }
 
 impl ClusterNodeDto {
-    pub fn new(addresses: Vec<models::NodeAddressDto>, annotations: std::collections::HashMap<String, String>, architecture: String, conditions: Vec<models::NodeConditionDto>, created_at: i64, kernel_version: String, kubelet_version: String, labels: std::collections::HashMap<String, String>, metrics_usage: models::MetricsUsageDto, name: String, operating_system: String, os_image: String, pods: Vec<models::NodePodInfoDto>, resources_allocatable: models::NodeResourceDto, resources_allocated: models::NodeResourceAllocatedDto, taints: Vec<models::NodeTaintDto>, unschedulable: bool) -> ClusterNodeDto {
+    pub fn new(addresses: Vec<models::NodeAddressDto>, annotations: std::collections::HashMap<String, String>, architecture: String, conditions: Vec<models::NodeConditionDto>, created_at: i64, kernel_version: String, kubelet_version: String, labels: std::collections::HashMap<String, String>, metrics_usage: models::MetricsUsageDto, name: String, operating_system: String, os_image: String, pods: Vec<models::NodePodInfoDto>, resources_allocatable: models::NodeResourceDto, resources_allocated: models::NodeResourceAllocatedDto, resources_capacity: models::NodeResourceDto, taints: Vec<models::NodeTaintDto>, unschedulable: bool) -> ClusterNodeDto {
         ClusterNodeDto {
             addresses,
             annotations,
@@ -70,6 +72,7 @@ impl ClusterNodeDto {
             pods,
             resources_allocatable: Box::new(resources_allocatable),
             resources_allocated: Box::new(resources_allocated),
+            resources_capacity: Box::new(resources_capacity),
             taints,
             unschedulable,
         }

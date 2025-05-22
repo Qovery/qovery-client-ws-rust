@@ -13,17 +13,23 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct NodeResourceAllocatedDto {
-    #[serde(rename = "cpu_milli")]
-    pub cpu_milli: i32,
-    #[serde(rename = "memory_mib")]
-    pub memory_mib: i32,
+    #[serde(rename = "limit_cpu_milli")]
+    pub limit_cpu_milli: i32,
+    #[serde(rename = "limit_memory_mib")]
+    pub limit_memory_mib: i32,
+    #[serde(rename = "request_cpu_milli")]
+    pub request_cpu_milli: i32,
+    #[serde(rename = "request_memory_mib")]
+    pub request_memory_mib: i32,
 }
 
 impl NodeResourceAllocatedDto {
-    pub fn new(cpu_milli: i32, memory_mib: i32) -> NodeResourceAllocatedDto {
+    pub fn new(limit_cpu_milli: i32, limit_memory_mib: i32, request_cpu_milli: i32, request_memory_mib: i32) -> NodeResourceAllocatedDto {
         NodeResourceAllocatedDto {
-            cpu_milli,
-            memory_mib,
+            limit_cpu_milli,
+            limit_memory_mib,
+            request_cpu_milli,
+            request_memory_mib,
         }
     }
 }
