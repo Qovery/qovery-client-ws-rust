@@ -15,15 +15,21 @@ use serde::{Deserialize, Serialize};
 pub struct QoveryNodeFailure {
     #[serde(rename = "message")]
     pub message: String,
+    #[serde(rename = "node_attributes")]
+    pub node_attributes: Box<models::QoveryNodeAttributes>,
     #[serde(rename = "reason")]
     pub reason: String,
+    #[serde(rename = "type")]
+    pub r#type: String,
 }
 
 impl QoveryNodeFailure {
-    pub fn new(message: String, reason: String) -> QoveryNodeFailure {
+    pub fn new(message: String, node_attributes: models::QoveryNodeAttributes, reason: String, r#type: String) -> QoveryNodeFailure {
         QoveryNodeFailure {
             message,
+            node_attributes: Box::new(node_attributes),
             reason,
+            r#type,
         }
     }
 }

@@ -80,6 +80,8 @@ pub mod qovery_component_in_failure;
 pub use self::qovery_component_in_failure::QoveryComponentInFailure;
 pub mod qovery_component_status;
 pub use self::qovery_component_status::QoveryComponentStatus;
+pub mod qovery_node_attributes;
+pub use self::qovery_node_attributes::QoveryNodeAttributes;
 pub mod qovery_node_failure;
 pub use self::qovery_node_failure::QoveryNodeFailure;
 pub mod resource_status_dto;
