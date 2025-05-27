@@ -8,6 +8,7 @@ docs/CertificateStatusDto.md
 docs/ClusterComputedStatusDto.md
 docs/ClusterListNodesApi.md
 docs/ClusterListNodesResponseDto.md
+docs/ClusterMetricsApi.md
 docs/ClusterNodeDto.md
 docs/ClusterStatusApi.md
 docs/ClusterStatusDto.md
@@ -67,6 +68,7 @@ docs/ShellApi.md
 docs/UnitDto.md
 git_push.sh
 src/apis/cluster_list_nodes_api.rs
+src/apis/cluster_metrics_api.rs
 src/apis/cluster_status_api.rs
 src/apis/configuration.rs
 src/apis/deployment_api.rs

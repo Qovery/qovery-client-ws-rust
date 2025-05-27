@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**limit_cpu_milli** | Option<**i32**> |  | [optional]
-**limit_memory_mib** | Option<**i32**> |  | [optional]
+**limit_cpu_milli** | **i32** |  | 
+**limit_memory_mib** | **i32** |  | 
 **request_cpu_milli** | **i32** |  | 
 **request_memory_mib** | **i32** |  | 
 

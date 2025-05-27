@@ -27,6 +27,7 @@ All URIs are relative to *http://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ClusterListNodesApi* | [**handle_cluster_list_nodes_request**](docs/ClusterListNodesApi.md#handle_cluster_list_nodes_request) | **GET** /cluster/node | 
+*ClusterMetricsApi* | [**handle_cluster_metrics_request**](docs/ClusterMetricsApi.md#handle_cluster_metrics_request) | **GET** /cluster/metrics | 
 *ClusterStatusApi* | [**handle_cluster_status_request**](docs/ClusterStatusApi.md#handle_cluster_status_request) | **GET** /cluster/status | 
 *DeploymentApi* | [**handle_deployment_logs_request**](docs/DeploymentApi.md#handle_deployment_logs_request) | **GET** /deployment/logs | 
 *DeploymentApi* | [**handle_deployment_status_request**](docs/DeploymentApi.md#handle_deployment_status_request) | **GET** /deployment/status | 

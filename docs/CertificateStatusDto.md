@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dns_names** | **Vec<String>** |  | 
 **failed_issuance_attempt_count** | **i64** |  | 
-**last_failure_issuance_time** | Option<**i64**> |  | [optional]
+**last_failure_issuance_time** | **i64** |  | 
 **not_after** | **i64** |  | 
 **not_before** | **i64** |  | 
 **renewal_time** | **i64** |  | 

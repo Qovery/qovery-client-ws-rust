@@ -112,6 +112,7 @@ impl From<&str> for ContentType {
 }
 
 pub mod cluster_list_nodes_api;
+pub mod cluster_metrics_api;
 pub mod cluster_status_api;
 pub mod deployment_api;
 pub mod logs_api;
