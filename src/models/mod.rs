@@ -6,6 +6,8 @@ pub mod cluster_computed_status_dto;
 pub use self::cluster_computed_status_dto::ClusterComputedStatusDto;
 pub mod cluster_list_nodes_response_dto;
 pub use self::cluster_list_nodes_response_dto::ClusterListNodesResponseDto;
+pub mod cluster_metrics_dto;
+pub use self::cluster_metrics_dto::ClusterMetricsDto;
 pub mod cluster_node_dto;
 pub use self::cluster_node_dto::ClusterNodeDto;
 pub mod cluster_status_dto;

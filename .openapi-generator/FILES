@@ -9,6 +9,7 @@ docs/ClusterComputedStatusDto.md
 docs/ClusterListNodesApi.md
 docs/ClusterListNodesResponseDto.md
 docs/ClusterMetricsApi.md
+docs/ClusterMetricsDto.md
 docs/ClusterNodeDto.md
 docs/ClusterStatusApi.md
 docs/ClusterStatusDto.md
@@ -84,6 +85,7 @@ src/models/application_status_dto.rs
 src/models/certificate_status_dto.rs
 src/models/cluster_computed_status_dto.rs
 src/models/cluster_list_nodes_response_dto.rs
+src/models/cluster_metrics_dto.rs
 src/models/cluster_node_dto.rs
 src/models/cluster_status_dto.rs
 src/models/cluster_status_global_status.rs

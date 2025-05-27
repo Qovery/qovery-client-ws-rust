@@ -15,23 +15,14 @@ use serde::{Deserialize, Serialize};
 pub struct ClusterStatusDto {
     #[serde(rename = "computed_status")]
     pub computed_status: Box<models::ClusterComputedStatusDto>,
-    #[serde(rename = "node_pools")]
-    pub node_pools: Vec<models::NodePoolInfoDto>,
-    #[serde(rename = "nodes")]
-    pub nodes: Vec<models::ClusterNodeDto>,
-    #[serde(rename = "pvcs")]
-    pub pvcs: Vec<models::PvcInfoDto>,
     #[serde(rename = "tls_certificate", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub tls_certificate: Option<Option<Box<models::CertificateStatusDto>>>,
 }
 
 impl ClusterStatusDto {
-    pub fn new(computed_status: models::ClusterComputedStatusDto, node_pools: Vec<models::NodePoolInfoDto>, nodes: Vec<models::ClusterNodeDto>, pvcs: Vec<models::PvcInfoDto>) -> ClusterStatusDto {
+    pub fn new(computed_status: models::ClusterComputedStatusDto) -> ClusterStatusDto {
         ClusterStatusDto {
             computed_status: Box::new(computed_status),
-            node_pools,
-            nodes,
-            pvcs,
             tls_certificate: None,
         }
     }

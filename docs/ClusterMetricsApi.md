@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## handle_cluster_metrics_request
 
-> models::ClusterStatusDto handle_cluster_metrics_request(organization, cluster)
+> models::ClusterMetricsDto handle_cluster_metrics_request(organization, cluster)
 
 
 ### Parameters
@@ -23,7 +23,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::ClusterStatusDto**](ClusterStatusDto.md)
+[**models::ClusterMetricsDto**](ClusterMetricsDto.md)
 
 ### Authorization
 
