@@ -17,8 +17,8 @@ pub struct CertificateStatusDto {
     pub dns_names: Vec<String>,
     #[serde(rename = "failed_issuance_attempt_count")]
     pub failed_issuance_attempt_count: i64,
-    #[serde(rename = "last_failure_issuance_time")]
-    pub last_failure_issuance_time: i64,
+    #[serde(rename = "last_failure_issuance_time", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub last_failure_issuance_time: Option<Option<i64>>,
     #[serde(rename = "not_after")]
     pub not_after: i64,
     #[serde(rename = "not_before")]
@@ -32,11 +32,11 @@ pub struct CertificateStatusDto {
 }
 
 impl CertificateStatusDto {
-    pub fn new(dns_names: Vec<String>, failed_issuance_attempt_count: i64, last_failure_issuance_time: i64, not_after: i64, not_before: i64, renewal_time: i64, state: models::ServiceStateDto) -> CertificateStatusDto {
+    pub fn new(dns_names: Vec<String>, failed_issuance_attempt_count: i64, not_after: i64, not_before: i64, renewal_time: i64, state: models::ServiceStateDto) -> CertificateStatusDto {
         CertificateStatusDto {
             dns_names,
             failed_issuance_attempt_count,
-            last_failure_issuance_time,
+            last_failure_issuance_time: None,
             not_after,
             not_before,
             renewal_time,

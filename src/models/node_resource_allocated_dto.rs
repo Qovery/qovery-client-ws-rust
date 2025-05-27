@@ -13,10 +13,10 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct NodeResourceAllocatedDto {
-    #[serde(rename = "limit_cpu_milli")]
-    pub limit_cpu_milli: i32,
-    #[serde(rename = "limit_memory_mib")]
-    pub limit_memory_mib: i32,
+    #[serde(rename = "limit_cpu_milli", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub limit_cpu_milli: Option<Option<i32>>,
+    #[serde(rename = "limit_memory_mib", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub limit_memory_mib: Option<Option<i32>>,
     #[serde(rename = "request_cpu_milli")]
     pub request_cpu_milli: i32,
     #[serde(rename = "request_memory_mib")]
@@ -24,10 +24,10 @@ pub struct NodeResourceAllocatedDto {
 }
 
 impl NodeResourceAllocatedDto {
-    pub fn new(limit_cpu_milli: i32, limit_memory_mib: i32, request_cpu_milli: i32, request_memory_mib: i32) -> NodeResourceAllocatedDto {
+    pub fn new(request_cpu_milli: i32, request_memory_mib: i32) -> NodeResourceAllocatedDto {
         NodeResourceAllocatedDto {
-            limit_cpu_milli,
-            limit_memory_mib,
+            limit_cpu_milli: None,
+            limit_memory_mib: None,
             request_cpu_milli,
             request_memory_mib,
         }
