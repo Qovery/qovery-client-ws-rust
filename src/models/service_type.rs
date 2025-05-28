@@ -24,6 +24,8 @@ pub enum ServiceType {
     Job,
     #[serde(rename = "HELM")]
     Helm,
+    #[serde(rename = "TERRAFORM")]
+    Terraform,
 
 }
 
@@ -35,6 +37,7 @@ impl std::fmt::Display for ServiceType {
             Self::Database => write!(f, "DATABASE"),
             Self::Job => write!(f, "JOB"),
             Self::Helm => write!(f, "HELM"),
+            Self::Terraform => write!(f, "TERRAFORM"),
         }
     }
 }
