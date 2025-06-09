@@ -29,10 +29,12 @@ pub struct EnvironmentStatusDto {
     pub project_id: String,
     #[serde(rename = "state")]
     pub state: models::ServiceStateDto,
+    #[serde(rename = "terraform")]
+    pub terraform: Vec<models::ApplicationStatusDto>,
 }
 
 impl EnvironmentStatusDto {
-    pub fn new(applications: Vec<models::ApplicationStatusDto>, containers: Vec<models::ApplicationStatusDto>, databases: Vec<models::DatabaseStatusDto>, helms: Vec<models::ApplicationStatusDto>, id: String, jobs: Vec<models::ApplicationStatusDto>, project_id: String, state: models::ServiceStateDto) -> EnvironmentStatusDto {
+    pub fn new(applications: Vec<models::ApplicationStatusDto>, containers: Vec<models::ApplicationStatusDto>, databases: Vec<models::DatabaseStatusDto>, helms: Vec<models::ApplicationStatusDto>, id: String, jobs: Vec<models::ApplicationStatusDto>, project_id: String, state: models::ServiceStateDto, terraform: Vec<models::ApplicationStatusDto>) -> EnvironmentStatusDto {
         EnvironmentStatusDto {
             applications,
             containers,
@@ -42,6 +44,7 @@ impl EnvironmentStatusDto {
             jobs,
             project_id,
             state,
+            terraform,
         }
     }
 }

@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **disk_mib_usage** | **i32** |  | 
 **disk_percent_usage** | **i32** |  | 
 **name** | **String** |  | 
-**namespace** | **String** |  | 
-**pod_name** | **String** |  | 
+**namespace** | Option<**String**> |  | [optional]
+**pod_name** | Option<**String**> |  | [optional]
 **qovery_service_info** | Option<[**models::PodQoveryServiceInfoDto**](PodQoveryServiceInfoDto.md)> |  | [optional]
 **status** | Option<**String**> |  | [optional]
 

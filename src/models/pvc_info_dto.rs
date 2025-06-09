@@ -23,10 +23,10 @@ pub struct PvcInfoDto {
     pub disk_percent_usage: i32,
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "namespace")]
-    pub namespace: String,
-    #[serde(rename = "pod_name")]
-    pub pod_name: String,
+    #[serde(rename = "namespace", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub namespace: Option<Option<String>>,
+    #[serde(rename = "pod_name", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub pod_name: Option<Option<String>>,
     #[serde(rename = "qovery_service_info", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub qovery_service_info: Option<Option<Box<models::PodQoveryServiceInfoDto>>>,
     #[serde(rename = "status", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
@@ -34,15 +34,15 @@ pub struct PvcInfoDto {
 }
 
 impl PvcInfoDto {
-    pub fn new(created_at: i64, disk_mib_capacity: i32, disk_mib_usage: i32, disk_percent_usage: i32, name: String, namespace: String, pod_name: String) -> PvcInfoDto {
+    pub fn new(created_at: i64, disk_mib_capacity: i32, disk_mib_usage: i32, disk_percent_usage: i32, name: String) -> PvcInfoDto {
         PvcInfoDto {
             created_at,
             disk_mib_capacity,
             disk_mib_usage,
             disk_percent_usage,
             name,
-            namespace,
-            pod_name,
+            namespace: None,
+            pod_name: None,
             qovery_service_info: None,
             status: None,
         }
