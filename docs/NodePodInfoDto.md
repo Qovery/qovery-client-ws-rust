@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **cpu_milli_limit** | Option<**i32**> |  | [optional]
 **cpu_milli_request** | Option<**i32**> |  | [optional]
 **created_at** | **i64** |  | 
+**ephemeral_storage_mib_limit** | Option<**i32**> |  | [optional]
+**ephemeral_storage_mib_request** | Option<**i32**> |  | [optional]
 **error_container_statuses** | [**Vec<models::NodePodErrorStatusDto>**](NodePodErrorStatusDto.md) |  | 
 **images_version** | **std::collections::HashMap<String, String>** |  | 
 **memory_mib_limit** | Option<**i32**> |  | [optional]

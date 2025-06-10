@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cpu_milli_usage** | Option<**i32**> |  | [optional]
 **cpu_percent_usage** | Option<**i32**> |  | [optional]
-**disk_mib_usage** | Option<**i32**> |  | [optional]
-**disk_percent_usage** | Option<**i32**> |  | [optional]
+**ephemeral_storage_percent_usage** | Option<**i32**> |  | [optional]
+**ephemeral_storage_usage** | Option<**i32**> |  | [optional]
 **memory_mib_rss_usage** | Option<**i32**> |  | [optional]
 **memory_mib_working_set_usage** | Option<**i32**> |  | [optional]
 **memory_percent_rss_usage** | Option<**i32**> |  | [optional]

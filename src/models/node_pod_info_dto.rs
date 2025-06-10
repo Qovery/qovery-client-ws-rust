@@ -19,6 +19,10 @@ pub struct NodePodInfoDto {
     pub cpu_milli_request: Option<Option<i32>>,
     #[serde(rename = "created_at")]
     pub created_at: i64,
+    #[serde(rename = "ephemeral_storage_mib_limit", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub ephemeral_storage_mib_limit: Option<Option<i32>>,
+    #[serde(rename = "ephemeral_storage_mib_request", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub ephemeral_storage_mib_request: Option<Option<i32>>,
     #[serde(rename = "error_container_statuses")]
     pub error_container_statuses: Vec<models::NodePodErrorStatusDto>,
     #[serde(rename = "images_version")]
@@ -45,6 +49,8 @@ impl NodePodInfoDto {
             cpu_milli_limit: None,
             cpu_milli_request: None,
             created_at,
+            ephemeral_storage_mib_limit: None,
+            ephemeral_storage_mib_request: None,
             error_container_statuses,
             images_version,
             memory_mib_limit: None,

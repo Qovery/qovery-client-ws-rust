@@ -17,10 +17,10 @@ pub struct MetricsUsageDto {
     pub cpu_milli_usage: Option<Option<i32>>,
     #[serde(rename = "cpu_percent_usage", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub cpu_percent_usage: Option<Option<i32>>,
-    #[serde(rename = "disk_mib_usage", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub disk_mib_usage: Option<Option<i32>>,
-    #[serde(rename = "disk_percent_usage", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub disk_percent_usage: Option<Option<i32>>,
+    #[serde(rename = "ephemeral_storage_percent_usage", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub ephemeral_storage_percent_usage: Option<Option<i32>>,
+    #[serde(rename = "ephemeral_storage_usage", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub ephemeral_storage_usage: Option<Option<i32>>,
     #[serde(rename = "memory_mib_rss_usage", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub memory_mib_rss_usage: Option<Option<i32>>,
     #[serde(rename = "memory_mib_working_set_usage", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
@@ -36,8 +36,8 @@ impl MetricsUsageDto {
         MetricsUsageDto {
             cpu_milli_usage: None,
             cpu_percent_usage: None,
-            disk_mib_usage: None,
-            disk_percent_usage: None,
+            ephemeral_storage_percent_usage: None,
+            ephemeral_storage_usage: None,
             memory_mib_rss_usage: None,
             memory_mib_working_set_usage: None,
             memory_percent_rss_usage: None,
