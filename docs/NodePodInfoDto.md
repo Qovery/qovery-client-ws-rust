@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **namespace** | **String** |  | 
 **qovery_service_info** | Option<[**models::PodQoveryServiceInfoDto**](PodQoveryServiceInfoDto.md)> |  | [optional]
 **restart_count** | **i32** |  | 
+**status_phase** | [**models::PodStatusPhase**](PodStatusPhase.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

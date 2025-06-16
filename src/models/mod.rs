@@ -68,6 +68,8 @@ pub mod pod_qovery_service_info_dto;
 pub use self::pod_qovery_service_info_dto::PodQoveryServiceInfoDto;
 pub mod pod_status_dto;
 pub use self::pod_status_dto::PodStatusDto;
+pub mod pod_status_phase;
+pub use self::pod_status_phase::PodStatusPhase;
 pub mod pvc_info_dto;
 pub use self::pvc_info_dto::PvcInfoDto;
 pub mod qovery_cluster_kube_version_status;

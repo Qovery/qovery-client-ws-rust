@@ -41,10 +41,12 @@ pub struct NodePodInfoDto {
     pub qovery_service_info: Option<Option<Box<models::PodQoveryServiceInfoDto>>>,
     #[serde(rename = "restart_count")]
     pub restart_count: i32,
+    #[serde(rename = "status_phase")]
+    pub status_phase: models::PodStatusPhase,
 }
 
 impl NodePodInfoDto {
-    pub fn new(created_at: i64, error_container_statuses: Vec<models::NodePodErrorStatusDto>, images_version: std::collections::HashMap<String, String>, metrics_usage: models::MetricsUsageDto, name: String, namespace: String, restart_count: i32) -> NodePodInfoDto {
+    pub fn new(created_at: i64, error_container_statuses: Vec<models::NodePodErrorStatusDto>, images_version: std::collections::HashMap<String, String>, metrics_usage: models::MetricsUsageDto, name: String, namespace: String, restart_count: i32, status_phase: models::PodStatusPhase) -> NodePodInfoDto {
         NodePodInfoDto {
             cpu_milli_limit: None,
             cpu_milli_request: None,
@@ -60,6 +62,7 @@ impl NodePodInfoDto {
             namespace,
             qovery_service_info: None,
             restart_count,
+            status_phase,
         }
     }
 }
