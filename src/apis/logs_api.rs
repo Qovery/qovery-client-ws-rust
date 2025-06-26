@@ -71,7 +71,7 @@ pub async fn handle_infra_logs_request(configuration: &configuration::Configurat
     }
 }
 
-pub async fn handle_service_logs_request(configuration: &configuration::Configuration, organization: &str, cluster: &str, project: &str, environment: &str, service: &str, pod_name: Option<&str>) -> Result<models::ServiceLogResponseDto, Error<HandleServiceLogsRequestError>> {
+pub async fn handle_service_logs_request(configuration: &configuration::Configuration, organization: &str, cluster: &str, project: &str, environment: &str, service: &str, pod_name: Option<&str>, deployment_id: Option<&str>) -> Result<models::ServiceLogResponseDto, Error<HandleServiceLogsRequestError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_organization = organization;
     let p_cluster = cluster;
@@ -79,8 +79,9 @@ pub async fn handle_service_logs_request(configuration: &configuration::Configur
     let p_environment = environment;
     let p_service = service;
     let p_pod_name = pod_name;
+    let p_deployment_id = deployment_id;
 
-    let uri_str = format!("{}/service/logs", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster), project=crate::apis::urlencode(p_project), environment=crate::apis::urlencode(p_environment), service=crate::apis::urlencode(p_service), pod_name=crate::apis::urlencode(p_pod_name.unwrap()));
+    let uri_str = format!("{}/service/logs", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster), project=crate::apis::urlencode(p_project), environment=crate::apis::urlencode(p_environment), service=crate::apis::urlencode(p_service), pod_name=crate::apis::urlencode(p_pod_name.unwrap()), deployment_id=crate::apis::urlencode(p_deployment_id.unwrap()));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
