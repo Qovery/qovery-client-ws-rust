@@ -46,7 +46,6 @@ docs/PodStatusDto.md
 docs/PodStatusPhase.md
 docs/PvcInfoDto.md
 docs/QoveryClusterKubeVersionStatus.md
-docs/QoveryComponentContainerStatusIssue.md
 docs/QoveryComponentContainerStatusLevel.md
 docs/QoveryComponentDto.md
 docs/QoveryComponentInFailure.md
@@ -121,7 +120,6 @@ src/models/pod_status_dto.rs
 src/models/pod_status_phase.rs
 src/models/pvc_info_dto.rs
 src/models/qovery_cluster_kube_version_status.rs
-src/models/qovery_component_container_status_issue.rs
 src/models/qovery_component_container_status_level.rs
 src/models/qovery_component_dto.rs
 src/models/qovery_component_in_failure.rs

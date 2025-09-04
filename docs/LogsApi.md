@@ -44,7 +44,7 @@ No authorization required
 
 ## handle_service_logs_request
 
-> models::ServiceLogResponseDto handle_service_logs_request(organization, cluster, project, environment, service, pod_name, deployment_id)
+> models::ServiceLogResponseDto handle_service_logs_request(organization, cluster, project, environment, service, pod_name, deployment_id, query, start)
 
 
 ### Parameters
@@ -59,6 +59,8 @@ Name | Type | Description  | Required | Notes
 **service** | **uuid::Uuid** |  | [required] |
 **pod_name** | Option<**String**> |  | [required] |
 **deployment_id** | Option<**String**> |  | [required] |
+**query** | Option<**String**> |  | [required] |
+**start** | Option<**String**> |  | [required] |
 
 ### Return type
 

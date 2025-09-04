@@ -74,8 +74,6 @@ pub mod pvc_info_dto;
 pub use self::pvc_info_dto::PvcInfoDto;
 pub mod qovery_cluster_kube_version_status;
 pub use self::qovery_cluster_kube_version_status::QoveryClusterKubeVersionStatus;
-pub mod qovery_component_container_status_issue;
-pub use self::qovery_component_container_status_issue::QoveryComponentContainerStatusIssue;
 pub mod qovery_component_container_status_level;
 pub use self::qovery_component_container_status_level::QoveryComponentContainerStatusLevel;
 pub mod qovery_component_dto;
