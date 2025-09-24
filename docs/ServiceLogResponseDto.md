@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **labels** | **std::collections::HashMap<String, String>** |  | 
 **message** | **String** |  | 
 **pod_name** | **String** |  | 
-**severity_text** | **i32** |  | 
+**severity_text** | **String** |  | 
 **version** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

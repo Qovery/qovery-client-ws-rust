@@ -24,13 +24,13 @@ pub struct ServiceLogResponseDto {
     #[serde(rename = "pod_name")]
     pub pod_name: String,
     #[serde(rename = "severity_text")]
-    pub severity_text: i32,
+    pub severity_text: String,
     #[serde(rename = "version")]
     pub version: String,
 }
 
 impl ServiceLogResponseDto {
-    pub fn new(container_name: String, created_at: i64, labels: std::collections::HashMap<String, String>, message: String, pod_name: String, severity_text: i32, version: String) -> ServiceLogResponseDto {
+    pub fn new(container_name: String, created_at: i64, labels: std::collections::HashMap<String, String>, message: String, pod_name: String, severity_text: String, version: String) -> ServiceLogResponseDto {
         ServiceLogResponseDto {
             container_name,
             created_at,
