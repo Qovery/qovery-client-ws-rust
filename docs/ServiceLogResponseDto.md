@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **container_name** | **String** |  | 
 **created_at** | **i64** |  | 
+**from_kube** | **bool** |  | 
 **labels** | **std::collections::HashMap<String, String>** |  | 
 **message** | **String** |  | 
 **pod_name** | **String** |  | 

@@ -17,6 +17,8 @@ pub struct ServiceLogResponseDto {
     pub container_name: String,
     #[serde(rename = "created_at")]
     pub created_at: i64,
+    #[serde(rename = "from_kube")]
+    pub from_kube: bool,
     #[serde(rename = "labels")]
     pub labels: std::collections::HashMap<String, String>,
     #[serde(rename = "message")]
@@ -30,10 +32,11 @@ pub struct ServiceLogResponseDto {
 }
 
 impl ServiceLogResponseDto {
-    pub fn new(container_name: String, created_at: i64, labels: std::collections::HashMap<String, String>, message: String, pod_name: String, severity_text: String, version: String) -> ServiceLogResponseDto {
+    pub fn new(container_name: String, created_at: i64, from_kube: bool, labels: std::collections::HashMap<String, String>, message: String, pod_name: String, severity_text: String, version: String) -> ServiceLogResponseDto {
         ServiceLogResponseDto {
             container_name,
             created_at,
+            from_kube,
             labels,
             message,
             pod_name,
