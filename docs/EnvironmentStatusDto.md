@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **jobs** | [**Vec<models::ApplicationStatusDto>**](ApplicationStatusDto.md) |  | 
 **project_id** | **String** |  | 
 **state** | [**models::ServiceStateDto**](ServiceStateDto.md) |  | 
-**terraform** | [**Vec<models::ApplicationStatusDto>**](ApplicationStatusDto.md) |  | 
+**terraform** | [**Vec<models::TerraformStatusDto>**](TerraformStatusDto.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -54,6 +54,8 @@ docs/QoveryNodeAttributes.md
 docs/QoveryNodeFailure.md
 docs/RemoteDebugApi.md
 docs/ResourceStatusDto.md
+docs/ServiceActionDetailsDto.md
+docs/ServiceActionDto.md
 docs/ServiceInfraLogResponseDto.md
 docs/ServiceListPodsApi.md
 docs/ServiceListPodsResponseDto.md
@@ -64,8 +66,10 @@ docs/ServiceMetricsV2Dto.md
 docs/ServiceStateDto.md
 docs/ServiceStatusApi.md
 docs/ServiceStatusDto.md
+docs/ServiceSubActionDto.md
 docs/ServiceType.md
 docs/ShellApi.md
+docs/TerraformStatusDto.md
 docs/UnitDto.md
 git_push.sh
 src/apis/cluster_list_nodes_api.rs
@@ -127,6 +131,8 @@ src/models/qovery_component_status.rs
 src/models/qovery_node_attributes.rs
 src/models/qovery_node_failure.rs
 src/models/resource_status_dto.rs
+src/models/service_action_details_dto.rs
+src/models/service_action_dto.rs
 src/models/service_infra_log_response_dto.rs
 src/models/service_list_pods_response_dto.rs
 src/models/service_log_response_dto.rs
@@ -134,5 +140,7 @@ src/models/service_metrics_dto.rs
 src/models/service_metrics_v2_dto.rs
 src/models/service_state_dto.rs
 src/models/service_status_dto.rs
+src/models/service_sub_action_dto.rs
 src/models/service_type.rs
+src/models/terraform_status_dto.rs
 src/models/unit_dto.rs
