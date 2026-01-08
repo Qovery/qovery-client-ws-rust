@@ -19,6 +19,8 @@ pub struct ApplicationStatusDto {
     pub id: String,
     #[serde(rename = "pods")]
     pub pods: Vec<models::PodStatusDto>,
+    #[serde(rename = "scaled_object", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub scaled_object: Option<Option<Box<models::ScaledObjectStatusDto>>>,
     #[serde(rename = "state")]
     pub state: models::ServiceStateDto,
 }
@@ -29,6 +31,7 @@ impl ApplicationStatusDto {
             certificates,
             id,
             pods,
+            scaled_object: None,
             state,
         }
     }

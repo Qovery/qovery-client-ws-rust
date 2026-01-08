@@ -54,6 +54,10 @@ docs/QoveryNodeAttributes.md
 docs/QoveryNodeFailure.md
 docs/RemoteDebugApi.md
 docs/ResourceStatusDto.md
+docs/ScaleTargetGvkrDto.md
+docs/ScaledObjectConditionDto.md
+docs/ScaledObjectHealthDto.md
+docs/ScaledObjectStatusDto.md
 docs/ServiceActionDetailsDto.md
 docs/ServiceActionDto.md
 docs/ServiceInfraLogResponseDto.md
@@ -131,6 +135,10 @@ src/models/qovery_component_status.rs
 src/models/qovery_node_attributes.rs
 src/models/qovery_node_failure.rs
 src/models/resource_status_dto.rs
+src/models/scale_target_gvkr_dto.rs
+src/models/scaled_object_condition_dto.rs
+src/models/scaled_object_health_dto.rs
+src/models/scaled_object_status_dto.rs
 src/models/service_action_details_dto.rs
 src/models/service_action_dto.rs
 src/models/service_infra_log_response_dto.rs
