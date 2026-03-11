@@ -32,13 +32,13 @@ pub enum HandleDeploymentStatusRequestError {
 
 pub async fn handle_deployment_logs_request(configuration: &configuration::Configuration, organization: &str, cluster: Option<&str>, project: &str, environment: &str, version: Option<&str>) -> Result<String, Error<HandleDeploymentLogsRequestError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_organization = organization;
-    let p_cluster = cluster;
-    let p_project = project;
-    let p_environment = environment;
-    let p_version = version;
+    let p_path_organization = organization;
+    let p_path_cluster = cluster;
+    let p_path_project = project;
+    let p_path_environment = environment;
+    let p_path_version = version;
 
-    let uri_str = format!("{}/deployment/logs", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster.unwrap()), project=crate::apis::urlencode(p_project), environment=crate::apis::urlencode(p_environment), version=crate::apis::urlencode(p_version.unwrap()));
+    let uri_str = format!("{}/deployment/logs", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster.unwrap()), project=crate::apis::urlencode(p_path_project), environment=crate::apis::urlencode(p_path_environment), version=crate::apis::urlencode(p_path_version.unwrap()));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -72,13 +72,13 @@ pub async fn handle_deployment_logs_request(configuration: &configuration::Confi
 
 pub async fn handle_deployment_status_request(configuration: &configuration::Configuration, organization: &str, cluster: Option<&str>, project: &str, environment: Option<&str>, version: Option<&str>) -> Result<String, Error<HandleDeploymentStatusRequestError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_organization = organization;
-    let p_cluster = cluster;
-    let p_project = project;
-    let p_environment = environment;
-    let p_version = version;
+    let p_path_organization = organization;
+    let p_path_cluster = cluster;
+    let p_path_project = project;
+    let p_path_environment = environment;
+    let p_path_version = version;
 
-    let uri_str = format!("{}/deployment/status", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster.unwrap()), project=crate::apis::urlencode(p_project), environment=crate::apis::urlencode(p_environment.unwrap()), version=crate::apis::urlencode(p_version.unwrap()));
+    let uri_str = format!("{}/deployment/status", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster.unwrap()), project=crate::apis::urlencode(p_path_project), environment=crate::apis::urlencode(p_path_environment.unwrap()), version=crate::apis::urlencode(p_path_version.unwrap()));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {

@@ -25,14 +25,14 @@ pub enum HandleShellRemoteDebugError {
 
 pub async fn handle_shell_remote_debug(configuration: &configuration::Configuration, organization: &str, cluster: &str, flavor: models::DebugFlavor, tty_width: i32, tty_height: i32, node_selector: Option<&str>) -> Result<String, Error<HandleShellRemoteDebugError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_organization = organization;
-    let p_cluster = cluster;
-    let p_flavor = flavor;
-    let p_tty_width = tty_width;
-    let p_tty_height = tty_height;
-    let p_node_selector = node_selector;
+    let p_path_organization = organization;
+    let p_path_cluster = cluster;
+    let p_path_flavor = flavor;
+    let p_path_tty_width = tty_width;
+    let p_path_tty_height = tty_height;
+    let p_path_node_selector = node_selector;
 
-    let uri_str = format!("{}/shell/debug", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster), flavor=p_flavor.to_string(), tty_width=p_tty_width, tty_height=p_tty_height, node_selector=crate::apis::urlencode(p_node_selector.unwrap()));
+    let uri_str = format!("{}/shell/debug", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster), flavor=p_path_flavor.to_string(), tty_width=p_path_tty_width, tty_height=p_path_tty_height, node_selector=crate::apis::urlencode(p_path_node_selector.unwrap()));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {

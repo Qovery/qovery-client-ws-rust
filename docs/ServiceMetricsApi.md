@@ -23,7 +23,7 @@ Name | Type | Description  | Required | Notes
 **project** | **uuid::Uuid** |  | [required] |
 **environment** | **uuid::Uuid** |  | [required] |
 **service** | **uuid::Uuid** |  | [required] |
-**service_type** | [**ServiceType**](.md) |  | [required] |
+**service_type** | [**ServiceType**](ServiceType.md) |  | [required] |
 
 ### Return type
 

@@ -32,14 +32,14 @@ pub enum HandleServiceLogsRequestError {
 
 pub async fn handle_infra_logs_request(configuration: &configuration::Configuration, organization: &str, cluster: &str, project: Option<&str>, environment: Option<&str>, service: Option<&str>, infra_component_type: &str) -> Result<models::ServiceInfraLogResponseDto, Error<HandleInfraLogsRequestError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_organization = organization;
-    let p_cluster = cluster;
-    let p_project = project;
-    let p_environment = environment;
-    let p_service = service;
-    let p_infra_component_type = infra_component_type;
+    let p_path_organization = organization;
+    let p_path_cluster = cluster;
+    let p_path_project = project;
+    let p_path_environment = environment;
+    let p_path_service = service;
+    let p_path_infra_component_type = infra_component_type;
 
-    let uri_str = format!("{}/infra/logs", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster), project=crate::apis::urlencode(p_project.unwrap()), environment=crate::apis::urlencode(p_environment.unwrap()), service=crate::apis::urlencode(p_service.unwrap()), infra_component_type=crate::apis::urlencode(p_infra_component_type));
+    let uri_str = format!("{}/infra/logs", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster), project=crate::apis::urlencode(p_path_project.unwrap()), environment=crate::apis::urlencode(p_path_environment.unwrap()), service=crate::apis::urlencode(p_path_service.unwrap()), infra_component_type=crate::apis::urlencode(p_path_infra_component_type));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -73,18 +73,18 @@ pub async fn handle_infra_logs_request(configuration: &configuration::Configurat
 
 pub async fn handle_service_logs_request(configuration: &configuration::Configuration, organization: &str, cluster: &str, project: &str, environment: &str, service: &str, pod_name: Option<&str>, deployment_id: Option<&str>, query: Option<&str>, start: Option<&str>, limit: Option<i32>) -> Result<models::ServiceLogResponseDto, Error<HandleServiceLogsRequestError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_organization = organization;
-    let p_cluster = cluster;
-    let p_project = project;
-    let p_environment = environment;
-    let p_service = service;
-    let p_pod_name = pod_name;
-    let p_deployment_id = deployment_id;
-    let p_query = query;
-    let p_start = start;
-    let p_limit = limit;
+    let p_path_organization = organization;
+    let p_path_cluster = cluster;
+    let p_path_project = project;
+    let p_path_environment = environment;
+    let p_path_service = service;
+    let p_path_pod_name = pod_name;
+    let p_path_deployment_id = deployment_id;
+    let p_path_query = query;
+    let p_path_start = start;
+    let p_path_limit = limit;
 
-    let uri_str = format!("{}/service/logs", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster), project=crate::apis::urlencode(p_project), environment=crate::apis::urlencode(p_environment), service=crate::apis::urlencode(p_service), pod_name=crate::apis::urlencode(p_pod_name.unwrap()), deployment_id=crate::apis::urlencode(p_deployment_id.unwrap()), query=crate::apis::urlencode(p_query.unwrap()), start=crate::apis::urlencode(p_start.unwrap()), limit=p_limit.unwrap());
+    let uri_str = format!("{}/service/logs", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster), project=crate::apis::urlencode(p_path_project), environment=crate::apis::urlencode(p_path_environment), service=crate::apis::urlencode(p_path_service), pod_name=crate::apis::urlencode(p_path_pod_name.unwrap()), deployment_id=crate::apis::urlencode(p_path_deployment_id.unwrap()), query=crate::apis::urlencode(p_path_query.unwrap()), start=crate::apis::urlencode(p_path_start.unwrap()), limit=p_path_limit.unwrap());
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {

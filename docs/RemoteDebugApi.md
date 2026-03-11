@@ -20,7 +20,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **organization** | **uuid::Uuid** |  | [required] |
 **cluster** | **uuid::Uuid** |  | [required] |
-**flavor** | [**DebugFlavor**](.md) |  | [required] |
+**flavor** | [**DebugFlavor**](DebugFlavor.md) |  | [required] |
 **tty_width** | **i32** |  | [required] |
 **tty_height** | **i32** |  | [required] |
 **node_selector** | Option<**String**> |  | [required] |

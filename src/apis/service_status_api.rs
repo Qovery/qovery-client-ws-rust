@@ -25,12 +25,12 @@ pub enum HandleServiceStatusRequestError {
 
 pub async fn handle_service_status_request(configuration: &configuration::Configuration, organization: &str, cluster: &str, project: Option<&str>, environment: Option<&str>) -> Result<models::ServiceStatusDto, Error<HandleServiceStatusRequestError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_organization = organization;
-    let p_cluster = cluster;
-    let p_project = project;
-    let p_environment = environment;
+    let p_path_organization = organization;
+    let p_path_cluster = cluster;
+    let p_path_project = project;
+    let p_path_environment = environment;
 
-    let uri_str = format!("{}/service/status", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster), project=crate::apis::urlencode(p_project.unwrap()), environment=crate::apis::urlencode(p_environment.unwrap()));
+    let uri_str = format!("{}/service/status", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster), project=crate::apis::urlencode(p_path_project.unwrap()), environment=crate::apis::urlencode(p_path_environment.unwrap()));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {

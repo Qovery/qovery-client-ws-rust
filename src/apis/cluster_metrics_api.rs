@@ -25,10 +25,10 @@ pub enum HandleClusterMetricsRequestError {
 
 pub async fn handle_cluster_metrics_request(configuration: &configuration::Configuration, organization: &str, cluster: &str) -> Result<models::ClusterMetricsDto, Error<HandleClusterMetricsRequestError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_organization = organization;
-    let p_cluster = cluster;
+    let p_path_organization = organization;
+    let p_path_cluster = cluster;
 
-    let uri_str = format!("{}/cluster/metrics", configuration.base_path, organization=crate::apis::urlencode(p_organization), cluster=crate::apis::urlencode(p_cluster));
+    let uri_str = format!("{}/cluster/metrics", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
