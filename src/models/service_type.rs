@@ -26,6 +26,8 @@ pub enum ServiceType {
     Helm,
     #[serde(rename = "TERRAFORM")]
     Terraform,
+    #[serde(rename = "ARGOCD_APP")]
+    ArgocdApp,
 
 }
 
@@ -38,6 +40,7 @@ impl std::fmt::Display for ServiceType {
             Self::Job => write!(f, "JOB"),
             Self::Helm => write!(f, "HELM"),
             Self::Terraform => write!(f, "TERRAFORM"),
+            Self::ArgocdApp => write!(f, "ARGOCD_APP"),
         }
     }
 }
