@@ -15,6 +15,8 @@ use serde::{Deserialize, Serialize};
 pub struct EnvironmentStatusDto {
     #[serde(rename = "applications")]
     pub applications: Vec<models::ApplicationStatusDto>,
+    #[serde(rename = "argocd_apps")]
+    pub argocd_apps: Vec<models::ArgoCdAppStatusDto>,
     #[serde(rename = "containers")]
     pub containers: Vec<models::ApplicationStatusDto>,
     #[serde(rename = "databases")]
@@ -34,9 +36,10 @@ pub struct EnvironmentStatusDto {
 }
 
 impl EnvironmentStatusDto {
-    pub fn new(applications: Vec<models::ApplicationStatusDto>, containers: Vec<models::ApplicationStatusDto>, databases: Vec<models::DatabaseStatusDto>, helms: Vec<models::ApplicationStatusDto>, id: String, jobs: Vec<models::ApplicationStatusDto>, project_id: String, state: models::ServiceStateDto, terraform: Vec<models::TerraformStatusDto>) -> EnvironmentStatusDto {
+    pub fn new(applications: Vec<models::ApplicationStatusDto>, argocd_apps: Vec<models::ArgoCdAppStatusDto>, containers: Vec<models::ApplicationStatusDto>, databases: Vec<models::DatabaseStatusDto>, helms: Vec<models::ApplicationStatusDto>, id: String, jobs: Vec<models::ApplicationStatusDto>, project_id: String, state: models::ServiceStateDto, terraform: Vec<models::TerraformStatusDto>) -> EnvironmentStatusDto {
         EnvironmentStatusDto {
             applications,
+            argocd_apps,
             containers,
             databases,
             helms,

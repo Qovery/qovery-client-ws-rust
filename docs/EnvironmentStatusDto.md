@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **applications** | [**Vec<models::ApplicationStatusDto>**](ApplicationStatusDto.md) |  | 
+**argocd_apps** | [**Vec<models::ArgoCdAppStatusDto>**](ArgoCdAppStatusDto.md) |  | 
 **containers** | [**Vec<models::ApplicationStatusDto>**](ApplicationStatusDto.md) |  | 
 **databases** | [**Vec<models::DatabaseStatusDto>**](DatabaseStatusDto.md) |  | 
 **helms** | [**Vec<models::ApplicationStatusDto>**](ApplicationStatusDto.md) |  | 

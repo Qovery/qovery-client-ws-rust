@@ -1,5 +1,7 @@
 pub mod application_status_dto;
 pub use self::application_status_dto::ApplicationStatusDto;
+pub mod argo_cd_app_status_dto;
+pub use self::argo_cd_app_status_dto::ArgoCdAppStatusDto;
 pub mod certificate_status_dto;
 pub use self::certificate_status_dto::CertificateStatusDto;
 pub mod cluster_computed_status_dto;

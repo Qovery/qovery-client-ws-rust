@@ -4,6 +4,7 @@
 Cargo.toml
 README.md
 docs/ApplicationStatusDto.md
+docs/ArgoCdAppStatusDto.md
 docs/CertificateStatusDto.md
 docs/ClusterComputedStatusDto.md
 docs/ClusterListNodesApi.md
@@ -90,6 +91,7 @@ src/apis/service_status_api.rs
 src/apis/shell_api.rs
 src/lib.rs
 src/models/application_status_dto.rs
+src/models/argo_cd_app_status_dto.rs
 src/models/certificate_status_dto.rs
 src/models/cluster_computed_status_dto.rs
 src/models/cluster_list_nodes_response_dto.rs
