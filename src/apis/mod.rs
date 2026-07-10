@@ -111,6 +111,8 @@ impl From<&str> for ContentType {
     }
 }
 
+pub mod blueprint_preview_api;
+pub mod blueprint_service_api;
 pub mod cluster_list_nodes_api;
 pub mod cluster_metrics_api;
 pub mod cluster_status_api;

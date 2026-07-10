@@ -26,6 +26,8 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*BlueprintPreviewApi* | [**handle_blueprint_preview_request**](docs/BlueprintPreviewApi.md#handle_blueprint_preview_request) | **GET** /blueprint/preview | 
+*BlueprintServiceApi* | [**handle_blueprint_service_created_request**](docs/BlueprintServiceApi.md#handle_blueprint_service_created_request) | **GET** /blueprint/service-created | 
 *ClusterListNodesApi* | [**handle_cluster_list_nodes_request**](docs/ClusterListNodesApi.md#handle_cluster_list_nodes_request) | **GET** /cluster/node | 
 *ClusterMetricsApi* | [**handle_cluster_metrics_request**](docs/ClusterMetricsApi.md#handle_cluster_metrics_request) | **GET** /cluster/metrics | 
 *ClusterStatusApi* | [**handle_cluster_status_request**](docs/ClusterStatusApi.md#handle_cluster_status_request) | **GET** /cluster/status | 

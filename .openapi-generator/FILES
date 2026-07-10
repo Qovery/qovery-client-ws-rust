@@ -5,6 +5,8 @@ Cargo.toml
 README.md
 docs/ApplicationStatusDto.md
 docs/ArgoCdAppStatusDto.md
+docs/BlueprintPreviewApi.md
+docs/BlueprintServiceApi.md
 docs/CertificateStatusDto.md
 docs/ClusterComputedStatusDto.md
 docs/ClusterListNodesApi.md
@@ -77,6 +79,8 @@ docs/ShellApi.md
 docs/TerraformStatusDto.md
 docs/UnitDto.md
 git_push.sh
+src/apis/blueprint_preview_api.rs
+src/apis/blueprint_service_api.rs
 src/apis/cluster_list_nodes_api.rs
 src/apis/cluster_metrics_api.rs
 src/apis/cluster_status_api.rs
