@@ -6,7 +6,13 @@ README.md
 docs/ApplicationStatusDto.md
 docs/ArgoCdAppStatusDto.md
 docs/BlueprintPreviewApi.md
+docs/BlueprintPreviewResult.md
+docs/BlueprintPreviewResultOneOf.md
+docs/BlueprintPreviewResultOneOf1.md
+docs/BlueprintPreviewResultOneOf2.md
+docs/BlueprintPreviewResultOneOf3.md
 docs/BlueprintServiceApi.md
+docs/BlueprintServiceCreatedEvent.md
 docs/CertificateStatusDto.md
 docs/ClusterComputedStatusDto.md
 docs/ClusterListNodesApi.md
@@ -96,6 +102,12 @@ src/apis/shell_api.rs
 src/lib.rs
 src/models/application_status_dto.rs
 src/models/argo_cd_app_status_dto.rs
+src/models/blueprint_preview_result.rs
+src/models/blueprint_preview_result_one_of.rs
+src/models/blueprint_preview_result_one_of_1.rs
+src/models/blueprint_preview_result_one_of_2.rs
+src/models/blueprint_preview_result_one_of_3.rs
+src/models/blueprint_service_created_event.rs
 src/models/certificate_status_dto.rs
 src/models/cluster_computed_status_dto.rs
 src/models/cluster_list_nodes_response_dto.rs

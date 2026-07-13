@@ -23,7 +23,7 @@ pub enum HandleBlueprintServiceCreatedRequestError {
 }
 
 
-pub async fn handle_blueprint_service_created_request(configuration: &configuration::Configuration, organization: &str, cluster: Option<&str>, project: &str, environment: &str) -> Result<String, Error<HandleBlueprintServiceCreatedRequestError>> {
+pub async fn handle_blueprint_service_created_request(configuration: &configuration::Configuration, organization: &str, cluster: Option<&str>, project: &str, environment: &str) -> Result<models::BlueprintServiceCreatedEvent, Error<HandleBlueprintServiceCreatedRequestError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_organization = organization;
     let p_path_cluster = cluster;
@@ -52,8 +52,8 @@ pub async fn handle_blueprint_service_created_request(configuration: &configurat
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Ok(content),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `String`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::BlueprintServiceCreatedEvent`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::BlueprintServiceCreatedEvent`")))),
         }
     } else {
         let content = resp.text().await?;

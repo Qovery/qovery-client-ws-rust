@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## handle_blueprint_preview_request
 
-> String handle_blueprint_preview_request(organization, cluster, preview_id)
+> models::BlueprintPreviewResult handle_blueprint_preview_request(organization, cluster, preview_id)
 
 
 ### Parameters
@@ -24,7 +24,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-**String**
+[**models::BlueprintPreviewResult**](BlueprintPreviewResult.md)
 
 ### Authorization
 
@@ -33,7 +33,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

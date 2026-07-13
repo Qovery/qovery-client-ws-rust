@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## handle_blueprint_service_created_request
 
-> String handle_blueprint_service_created_request(organization, cluster, project, environment)
+> models::BlueprintServiceCreatedEvent handle_blueprint_service_created_request(organization, cluster, project, environment)
 
 
 ### Parameters
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-**String**
+[**models::BlueprintServiceCreatedEvent**](BlueprintServiceCreatedEvent.md)
 
 ### Authorization
 
@@ -34,7 +34,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
