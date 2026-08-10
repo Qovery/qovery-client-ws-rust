@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agentic_workflows** | [**Vec<models::ApplicationStatusDto>**](ApplicationStatusDto.md) |  | 
 **applications** | [**Vec<models::ApplicationStatusDto>**](ApplicationStatusDto.md) |  | 
 **argocd_apps** | [**Vec<models::ArgoCdAppStatusDto>**](ArgoCdAppStatusDto.md) |  | 
 **containers** | [**Vec<models::ApplicationStatusDto>**](ApplicationStatusDto.md) |  | 

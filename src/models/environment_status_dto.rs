@@ -13,6 +13,8 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct EnvironmentStatusDto {
+    #[serde(rename = "agentic_workflows")]
+    pub agentic_workflows: Vec<models::ApplicationStatusDto>,
     #[serde(rename = "applications")]
     pub applications: Vec<models::ApplicationStatusDto>,
     #[serde(rename = "argocd_apps")]
@@ -36,8 +38,9 @@ pub struct EnvironmentStatusDto {
 }
 
 impl EnvironmentStatusDto {
-    pub fn new(applications: Vec<models::ApplicationStatusDto>, argocd_apps: Vec<models::ArgoCdAppStatusDto>, containers: Vec<models::ApplicationStatusDto>, databases: Vec<models::DatabaseStatusDto>, helms: Vec<models::ApplicationStatusDto>, id: String, jobs: Vec<models::ApplicationStatusDto>, project_id: String, state: models::ServiceStateDto, terraform: Vec<models::TerraformStatusDto>) -> EnvironmentStatusDto {
+    pub fn new(agentic_workflows: Vec<models::ApplicationStatusDto>, applications: Vec<models::ApplicationStatusDto>, argocd_apps: Vec<models::ArgoCdAppStatusDto>, containers: Vec<models::ApplicationStatusDto>, databases: Vec<models::DatabaseStatusDto>, helms: Vec<models::ApplicationStatusDto>, id: String, jobs: Vec<models::ApplicationStatusDto>, project_id: String, state: models::ServiceStateDto, terraform: Vec<models::TerraformStatusDto>) -> EnvironmentStatusDto {
         EnvironmentStatusDto {
+            agentic_workflows,
             applications,
             argocd_apps,
             containers,
