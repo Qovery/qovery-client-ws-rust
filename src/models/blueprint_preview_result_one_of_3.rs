@@ -11,17 +11,20 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// BlueprintPreviewResultOneOf3 : The preview did not complete in time.
+/// BlueprintPreviewResultOneOf3 : The preview did not complete in time. `message` names the step that ran out of time and after how long, when the engine got far enough to report it; it is absent when nothing did — the engine went quiet, or the gateway stopped waiting first.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct BlueprintPreviewResultOneOf3 {
+    #[serde(rename = "message", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub message: Option<Option<String>>,
     #[serde(rename = "type")]
     pub r#type: Type,
 }
 
 impl BlueprintPreviewResultOneOf3 {
-    /// The preview did not complete in time.
+    /// The preview did not complete in time. `message` names the step that ran out of time and after how long, when the engine got far enough to report it; it is absent when nothing did — the engine went quiet, or the gateway stopped waiting first.
     pub fn new(r#type: Type) -> BlueprintPreviewResultOneOf3 {
         BlueprintPreviewResultOneOf3 {
+            message: None,
             r#type,
         }
     }
