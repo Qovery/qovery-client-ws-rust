@@ -1,4 +1,4 @@
-# ArgoCdAppStatusDto
+# ArgocdAppStatusDto
 
 ## Properties
 

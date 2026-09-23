@@ -18,7 +18,7 @@ pub struct EnvironmentStatusDto {
     #[serde(rename = "applications")]
     pub applications: Vec<models::ApplicationStatusDto>,
     #[serde(rename = "argocd_apps")]
-    pub argocd_apps: Vec<models::ArgoCdAppStatusDto>,
+    pub argocd_apps: Vec<models::ArgocdAppStatusDto>,
     #[serde(rename = "containers")]
     pub containers: Vec<models::ApplicationStatusDto>,
     #[serde(rename = "databases")]
@@ -38,7 +38,7 @@ pub struct EnvironmentStatusDto {
 }
 
 impl EnvironmentStatusDto {
-    pub fn new(agentic_workflows: Vec<models::ApplicationStatusDto>, applications: Vec<models::ApplicationStatusDto>, argocd_apps: Vec<models::ArgoCdAppStatusDto>, containers: Vec<models::ApplicationStatusDto>, databases: Vec<models::DatabaseStatusDto>, helms: Vec<models::ApplicationStatusDto>, id: String, jobs: Vec<models::ApplicationStatusDto>, project_id: String, state: models::ServiceStateDto, terraform: Vec<models::TerraformStatusDto>) -> EnvironmentStatusDto {
+    pub fn new(agentic_workflows: Vec<models::ApplicationStatusDto>, applications: Vec<models::ApplicationStatusDto>, argocd_apps: Vec<models::ArgocdAppStatusDto>, containers: Vec<models::ApplicationStatusDto>, databases: Vec<models::DatabaseStatusDto>, helms: Vec<models::ApplicationStatusDto>, id: String, jobs: Vec<models::ApplicationStatusDto>, project_id: String, state: models::ServiceStateDto, terraform: Vec<models::TerraformStatusDto>) -> EnvironmentStatusDto {
         EnvironmentStatusDto {
             agentic_workflows,
             applications,

@@ -28,6 +28,8 @@ pub enum ServiceStateDto {
     Completed,
     #[serde(rename = "WARNING")]
     Warning,
+    #[serde(rename = "UNAVAILABLE")]
+    Unavailable,
 
 }
 
@@ -41,6 +43,7 @@ impl std::fmt::Display for ServiceStateDto {
             Self::Stopped => write!(f, "STOPPED"),
             Self::Completed => write!(f, "COMPLETED"),
             Self::Warning => write!(f, "WARNING"),
+            Self::Unavailable => write!(f, "UNAVAILABLE"),
         }
     }
 }

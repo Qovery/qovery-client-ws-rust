@@ -13,13 +13,16 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct NodeDto {
+    #[serde(rename = "kubelet_version")]
+    pub kubelet_version: String,
     #[serde(rename = "name")]
     pub name: String,
 }
 
 impl NodeDto {
-    pub fn new(name: String) -> NodeDto {
+    pub fn new(kubelet_version: String, name: String) -> NodeDto {
         NodeDto {
+            kubelet_version,
             name,
         }
     }

@@ -12,7 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ArgoCdAppStatusDto {
+pub struct ArgocdAppStatusDto {
     #[serde(rename = "id")]
     pub id: String,
     #[serde(rename = "pods")]
@@ -21,9 +21,9 @@ pub struct ArgoCdAppStatusDto {
     pub state: models::ServiceStateDto,
 }
 
-impl ArgoCdAppStatusDto {
-    pub fn new(id: String, pods: Vec<models::PodStatusDto>, state: models::ServiceStateDto) -> ArgoCdAppStatusDto {
-        ArgoCdAppStatusDto {
+impl ArgocdAppStatusDto {
+    pub fn new(id: String, pods: Vec<models::PodStatusDto>, state: models::ServiceStateDto) -> ArgocdAppStatusDto {
+        ArgocdAppStatusDto {
             id,
             pods,
             state,

@@ -1,7 +1,7 @@
 pub mod application_status_dto;
 pub use self::application_status_dto::ApplicationStatusDto;
-pub mod argo_cd_app_status_dto;
-pub use self::argo_cd_app_status_dto::ArgoCdAppStatusDto;
+pub mod argocd_app_status_dto;
+pub use self::argocd_app_status_dto::ArgocdAppStatusDto;
 pub mod blueprint_preview_result;
 pub use self::blueprint_preview_result::BlueprintPreviewResult;
 pub mod blueprint_preview_result_one_of;
@@ -24,6 +24,8 @@ pub mod cluster_metrics_dto;
 pub use self::cluster_metrics_dto::ClusterMetricsDto;
 pub mod cluster_node_dto;
 pub use self::cluster_node_dto::ClusterNodeDto;
+pub mod cluster_quota_warning_dto;
+pub use self::cluster_quota_warning_dto::ClusterQuotaWarningDto;
 pub mod cluster_status_dto;
 pub use self::cluster_status_dto::ClusterStatusDto;
 pub mod cluster_status_global_status;

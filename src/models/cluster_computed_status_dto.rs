@@ -25,6 +25,8 @@ pub struct ClusterComputedStatusDto {
     pub qovery_components: Vec<models::QoveryComponentDto>,
     #[serde(rename = "qovery_components_in_failure")]
     pub qovery_components_in_failure: Vec<models::QoveryComponentInFailure>,
+    #[serde(rename = "quota_warning", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub quota_warning: Option<Option<Box<models::ClusterQuotaWarningDto>>>,
 }
 
 impl ClusterComputedStatusDto {
@@ -36,6 +38,7 @@ impl ClusterComputedStatusDto {
             node_warnings,
             qovery_components,
             qovery_components_in_failure,
+            quota_warning: None,
         }
     }
 }

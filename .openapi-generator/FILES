@@ -4,7 +4,7 @@
 Cargo.toml
 README.md
 docs/ApplicationStatusDto.md
-docs/ArgoCdAppStatusDto.md
+docs/ArgocdAppStatusDto.md
 docs/BlueprintPreviewApi.md
 docs/BlueprintPreviewResult.md
 docs/BlueprintPreviewResultOneOf.md
@@ -20,6 +20,7 @@ docs/ClusterListNodesResponseDto.md
 docs/ClusterMetricsApi.md
 docs/ClusterMetricsDto.md
 docs/ClusterNodeDto.md
+docs/ClusterQuotaWarningDto.md
 docs/ClusterStatusApi.md
 docs/ClusterStatusDto.md
 docs/ClusterStatusGlobalStatus.md
@@ -101,7 +102,7 @@ src/apis/service_status_api.rs
 src/apis/shell_api.rs
 src/lib.rs
 src/models/application_status_dto.rs
-src/models/argo_cd_app_status_dto.rs
+src/models/argocd_app_status_dto.rs
 src/models/blueprint_preview_result.rs
 src/models/blueprint_preview_result_one_of.rs
 src/models/blueprint_preview_result_one_of_1.rs
@@ -113,6 +114,7 @@ src/models/cluster_computed_status_dto.rs
 src/models/cluster_list_nodes_response_dto.rs
 src/models/cluster_metrics_dto.rs
 src/models/cluster_node_dto.rs
+src/models/cluster_quota_warning_dto.rs
 src/models/cluster_status_dto.rs
 src/models/cluster_status_global_status.rs
 src/models/container_state_dto.rs

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **node_warnings** | [**std::collections::HashMap<String, Vec<models::QoveryNodeFailure>>**](Vec.md) |  | 
 **qovery_components** | [**Vec<models::QoveryComponentDto>**](QoveryComponentDto.md) |  | 
 **qovery_components_in_failure** | [**Vec<models::QoveryComponentInFailure>**](QoveryComponentInFailure.md) |  | 
+**quota_warning** | Option<[**models::ClusterQuotaWarningDto**](ClusterQuotaWarningDto.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

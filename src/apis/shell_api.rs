@@ -23,7 +23,7 @@ pub enum HandleShellExecError {
 }
 
 
-pub async fn handle_shell_exec(configuration: &configuration::Configuration, organization: &str, cluster: &str, project: &str, environment: &str, service: &str, pod_name: Option<&str>, container_name: Option<&str>, command: Vec<String>, tty_width: i32, tty_height: i32) -> Result<String, Error<HandleShellExecError>> {
+pub async fn handle_shell_exec(configuration: &configuration::Configuration, organization: &str, cluster: &str, project: &str, environment: &str, service: &str, pod_name: Option<&str>, container_name: Option<&str>, command: Vec<String>, tty_width: i32, tty_height: i32, service_type: Option<&str>) -> Result<String, Error<HandleShellExecError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_organization = organization;
     let p_path_cluster = cluster;
@@ -35,8 +35,9 @@ pub async fn handle_shell_exec(configuration: &configuration::Configuration, org
     let p_path_command = command;
     let p_path_tty_width = tty_width;
     let p_path_tty_height = tty_height;
+    let p_path_service_type = service_type;
 
-    let uri_str = format!("{}/shell/exec", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster), project=crate::apis::urlencode(p_path_project), environment=crate::apis::urlencode(p_path_environment), service=crate::apis::urlencode(p_path_service), pod_name=crate::apis::urlencode(p_path_pod_name.unwrap()), container_name=crate::apis::urlencode(p_path_container_name.unwrap()), command=p_path_command.join(",").as_ref(), tty_width=p_path_tty_width, tty_height=p_path_tty_height);
+    let uri_str = format!("{}/shell/exec", configuration.base_path, organization=crate::apis::urlencode(p_path_organization), cluster=crate::apis::urlencode(p_path_cluster), project=crate::apis::urlencode(p_path_project), environment=crate::apis::urlencode(p_path_environment), service=crate::apis::urlencode(p_path_service), pod_name=crate::apis::urlencode(p_path_pod_name.unwrap()), container_name=crate::apis::urlencode(p_path_container_name.unwrap()), command=p_path_command.join(",").as_ref(), tty_width=p_path_tty_width, tty_height=p_path_tty_height, service_type=p_path_service_type.unwrap().to_string());
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {

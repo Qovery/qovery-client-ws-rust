@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## handle_shell_exec
 
-> String handle_shell_exec(organization, cluster, project, environment, service, pod_name, container_name, command, tty_width, tty_height)
+> String handle_shell_exec(organization, cluster, project, environment, service, pod_name, container_name, command, tty_width, tty_height, service_type)
 
 
 ### Parameters
@@ -28,6 +28,7 @@ Name | Type | Description  | Required | Notes
 **command** | [**Vec<String>**](String.md) |  | [required] |
 **tty_width** | **i32** |  | [required] |
 **tty_height** | **i32** |  | [required] |
+**service_type** | Option<**String**> |  | [required] |
 
 ### Return type
 
